@@ -1,0 +1,11 @@
+
+.codegpt
+.netlify
+.env.local
+.env.*.local
+.env
+
+*storybook.log
+storybook-static
+node_modules/
+**/node_modules/

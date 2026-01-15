@@ -1,0 +1,21 @@
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["netlify/_shared/fonts/NotoSans-Regular.ttf"]
+  external_node_modules = ["opentype.js","cookie","@supabase/supabase-js"]
+
+[functions.format]
+  ".js" = "esm"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
